@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8257934348915906266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7997154894273624123}
+  - component: {fileID: 5499150469852438689}
+  - component: {fileID: 4855890905470458426}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7997154894273624123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257934348915906266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5499150469852438689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257934348915906266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809ddab58e10a134d95d6aea6915d883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  tempo: {fileID: 0}
+  pauses: {fileID: 0}
+  waves:
+  - apenasAtiradores: 0
+    apenasMelees: 1
+    nome: 1
+    inimigo:
+    - {fileID: 0}
+    quantidade: 7
+    ritmo: 3
+  - apenasAtiradores: 1
+    apenasMelees: 0
+    nome: 2
+    inimigo:
+    - {fileID: 2732320208868592834, guid: 79f082162c90e93449c5028047581e6e, type: 3}
+    - {fileID: 0}
+    quantidade: 5
+    ritmo: 2
+  - apenasAtiradores: 0
+    apenasMelees: 0
+    nome: 3
+    inimigo:
+    - {fileID: 2732320208868592834, guid: 79f082162c90e93449c5028047581e6e, type: 3}
+    - {fileID: 0}
+    quantidade: 10
+    ritmo: 3
+  - apenasAtiradores: 0
+    apenasMelees: 0
+    nome: 4
+    inimigo:
+    - {fileID: 2732320208868592834, guid: 79f082162c90e93449c5028047581e6e, type: 3}
+    - {fileID: 0}
+    quantidade: 15
+    ritmo: 1.5
+  - apenasAtiradores: 0
+    apenasMelees: 1
+    nome: WaveDeMelles
+    inimigo:
+    - {fileID: 2732320208868592834, guid: 79f082162c90e93449c5028047581e6e, type: 3}
+    - {fileID: 0}
+    quantidade: 25
+    ritmo: 0.9
+  - apenasAtiradores: 1
+    apenasMelees: 0
+    nome: Inferno
+    inimigo:
+    - {fileID: 2732320208868592834, guid: 79f082162c90e93449c5028047581e6e, type: 3}
+    - {fileID: 0}
+    quantidade: 25
+    ritmo: 0.9
+  - apenasAtiradores: 0
+    apenasMelees: 0
+    nome: Inferno
+    inimigo:
+    - {fileID: 2732320208868592834, guid: 79f082162c90e93449c5028047581e6e, type: 3}
+    - {fileID: 0}
+    quantidade: 50
+    ritmo: 2
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  contagemRegressiva:
+  - {fileID: 0}
+  - {fileID: 0}
+  contadorDaWave: 0
+  tempoEntreWaves: 5
+--- !u!114 &4855890905470458426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257934348915906266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af65b4b09c27eff41b3963c147440f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveCounter: {fileID: 0}
+  waveClear: {fileID: 0}
+  numeroDaWave: 1
+  numeroDeWaves: 0
+  contagem: 3

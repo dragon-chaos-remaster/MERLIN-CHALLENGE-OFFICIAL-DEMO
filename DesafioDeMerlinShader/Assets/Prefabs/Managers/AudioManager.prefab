@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1383171828224428209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1383171828224428208}
+  - component: {fileID: 1383171828224428223}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1383171828224428208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383171828224428209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 31.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1383171828224428223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383171828224428209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d284c1048fe4e40b5740beb0925d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sons:
+  - som: {fileID: 8300000, guid: a486a0d7fe679ff48a4c949cebaf4bfa, type: 3}
+    volume: 0.5
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: "explos\xE3o"
+  - som: {fileID: 8300000, guid: a2181e555b8b63748bfb0dcda9306301, type: 3}
+    volume: 0.5
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: buttonpress
+  - som: {fileID: 8300000, guid: a02d20c6960870b4baa321af701e485c, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: raio
+  - som: {fileID: 8300000, guid: 16acef20b58939143af019ecca191e75, type: 3}
+    volume: 0.6
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: died
+  - som: {fileID: 8300000, guid: a486a0d7fe679ff48a4c949cebaf4bfa, type: 3}
+    volume: 1
+    pitch: 0.25
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: rockexplode
+  - som: {fileID: 8300000, guid: 8aefe30864c46514b80abbd1bcf0e491, type: 3}
+    volume: 1
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: snare
+  - som: {fileID: 8300000, guid: 8aefe30864c46514b80abbd1bcf0e491, type: 3}
+    volume: 1
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: revertSnare
+  - som: {fileID: 8300000, guid: f179259da3e086a41a7cf1547206ea8c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: do
+  - som: {fileID: 8300000, guid: 5820f5ee3e85fe545a2a65abbe7d1d3f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: fa
+  - som: {fileID: 8300000, guid: 7a9aa8761e761b74194e85e2f4fcca1d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: mi
+  - som: {fileID: 8300000, guid: bb5abc9d37f90a742841c640c348a54e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: sol
+  - som: {fileID: 8300000, guid: 0f4446e8376c29945a5f39844fdc28c6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: re

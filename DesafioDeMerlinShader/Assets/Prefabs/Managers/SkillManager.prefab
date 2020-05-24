@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7301292317888926681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7301292317888926683}
+  - component: {fileID: 7301292317888926680}
+  - component: {fileID: 829300414}
+  m_Layer: 0
+  m_Name: SkillManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7301292317888926683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301292317888926681}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.33, y: 19.76, z: -0.76}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &7301292317888926680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301292317888926681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a6103f2e32577489bbf5cee4a53f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bolaFogo: 0
+  raio: 0
+  seiLa: 0
+  player: {fileID: 0}
+  fireBall: {fileID: 7269953317423247989, guid: f5479029118179f4b8fb76c52f440ccc,
+    type: 3}
+  choque: {fileID: 1823173409967616, guid: 162b9479abfd10c4db6b231b56462446, type: 3}
+  naoSei: {fileID: 122691458262291614, guid: 043acb340f5101c4ca27c16312d3d710, type: 3}
+  cagadorDeMagia: {fileID: 7301292317888926683}
+  hitavel:
+    serializedVersion: 2
+    m_Bits: 256
+  manaRegenSegundo: 10
+  manaMax: 100
+  updatedMana: 100
+  custoManaFogo: 10
+  custoManaRaio: 15
+  custoManaNaoSei: 20
+  quantidadeMana: {fileID: 0}
+  barraMana: {fileID: 0}
+  ataqueBasico: {fileID: 4730159595522024, guid: 413b180ebab02d349a31789fab789ef6,
+    type: 3}
+  ataquePoint: {fileID: 0}
+  raizes: {fileID: 63403252030117313, guid: c0910da3193842c4c815e07bec5fb9de, type: 3}
+  raizesPoint: {fileID: 0}
+  choquePoint: {fileID: 0}
+  tempoAtaque: 1.5
+  podeAtacar: 1
+--- !u!114 &829300414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301292317888926681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0ad71391b8afa48a89ee9cecb77874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoAtaqueFogo: 2
+  tempoAtaqueRaio: 10
+  tempoAtaqueSnare: 200
+  waitFireRateFogo: 1
+  waitFireRateRaio: 1
+  waitFireRateSnare: 1
+  podeAtacarFogo: 1
+  podeAtacarRaio: 1
+  podeAtacarSnare: 1

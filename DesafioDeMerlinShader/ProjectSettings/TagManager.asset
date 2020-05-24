@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - bolaFogo
+  - NaoSei
+  - Raio
+  - inimigoFraco
+  - player
+  - coletavelVida
+  - coletavelMana
+  - inimigoTerra
+  - ShootPoint
+  - pedregulho
+  - distanciaDeTiro
+  - ataqueBasico
+  - chao
+  - hitBolaFogo
+  - controlador
+  - pegaFogo
+  - snare
+  - ilha2
+  - ilha1
+  - ilha3
+  - BossCaveira
+  - inimigoPedra
+  - PoolingArrow
+  - Resume
+  - Options
+  - Quit
+  - inimigoPedraMinion
+  - inimigoMadeira
+  - RaizDoPlayer
+  - Controls
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - hitavel
+  - ConfinaCamera
+  - Magia
+  - PostProcessing
+  - BossCaveira
+  - Flecha
+  - Player
+  - Enemies
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
