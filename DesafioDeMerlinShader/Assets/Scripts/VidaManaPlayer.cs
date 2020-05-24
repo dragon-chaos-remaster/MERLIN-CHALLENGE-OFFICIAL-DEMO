@@ -11,7 +11,11 @@ public class VidaManaPlayer : MonoBehaviour
     public Image barraVida;
     public Text quantidadeVida;
 
-
+    private Animator animator;
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,8 +25,9 @@ public class VidaManaPlayer : MonoBehaviour
         if (vida <= 0)
         {
             //Destroy(gameObject);
-            gameObject.SetActive(false);
-            
+            //  gameObject.SetActive(false);
+            animator.SetBool("Morreu", true);
+
         }
         if (vida > 100)
         {
@@ -34,7 +39,7 @@ public class VidaManaPlayer : MonoBehaviour
         }
 
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -46,7 +51,7 @@ public class VidaManaPlayer : MonoBehaviour
         if (other.tag == ("pedregulho") && (CompareTag("player")))
         {
             vida -= 10;
-           
+
         }
 
 
@@ -57,12 +62,12 @@ public class VidaManaPlayer : MonoBehaviour
         //if (collision.collider.tag == ("inimigoFraco"))
         //{
         //    vida -= 10;
-           
+
         //}
         //if (collision.collider.tag == ("inimigoTerra"))
         //{
         //    vida -= 15;
-            
+
         //}
         switch (collision.collider.tag)
         {
@@ -74,13 +79,13 @@ public class VidaManaPlayer : MonoBehaviour
                 break;
             case "inimigoTerra":
                 vida -= 15;
-                break; 
+                break;
             case "inimigoPedra":
-                vida -= 5 * Mathf.Clamp(collision.gameObject.transform.localScale.magnitude,1f,4f);
+                vida -= 5 * Mathf.Clamp(collision.gameObject.transform.localScale.magnitude, 1f, 4f);
                 break;
             case "NaoSei":
                 vida -= 5;
-                
+
                 break;
 
         }

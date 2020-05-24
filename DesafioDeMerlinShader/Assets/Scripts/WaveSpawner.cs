@@ -6,7 +6,7 @@ public enum SpawnState { SPAWNANDO, ESPERANDO, CONTANDO };
 
 public class WaveSpawner : MonoBehaviour
 {
-
+    private Animator animator;
     public Pooling[] pooledObjects;
 
     // TODOS PRECISAM ESTAR VERDADEIROS
@@ -74,17 +74,18 @@ public class WaveSpawner : MonoBehaviour
     private SpawnState estado = SpawnState.CONTANDO;
     void Start()
     {
+        animator = GetComponent<Animator>();
         if (spawnPoints.Count == 0)
         {
             Debug.LogError("ERRO: Não foi encontrado nenhum Ponto de Spawn dos Inimigos na Cena. FAVOR COLOCAR: " + spawnPoints.Count + " PARA A CENA");
         }
-       
-        for(int i = 0; i < pooledObjects[1].listaDeObjetos.Count; i++)
+
+        for (int i = 0; i < pooledObjects[1].listaDeObjetos.Count; i++)
         {
             pooledObjects[1].listaDeObjetos[i].AddComponent<CogumeloBoom>();
         }
         //transforms.Add(whenCameraChanges.nIlha, spawnPoints);
-        
+
         contadorDaWave = tempoEntreWaves;
 
     }
@@ -94,7 +95,7 @@ public class WaveSpawner : MonoBehaviour
         {
             return;
         }
-        
+
         if (estado == SpawnState.ESPERANDO)
         {
             //Checar se os inimigos ainda estão vivos
@@ -108,6 +109,7 @@ public class WaveSpawner : MonoBehaviour
                     WaveCount.Instance.waveClear.gameObject.SetActive(true);
                     contagemRegressiva[0].gameObject.SetActive(true);
                     contagemRegressiva[1].gameObject.SetActive(true);
+                    animator.SetBool("Vitoria", true);
                 }
                 //print("Wave Completa");
                 //zaWarudo = true;
@@ -128,6 +130,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if (contadorDaWave <= 0)
         {
+            animator.SetBool("Vitoria", false);
             WaveCount.Instance.waveClear.gameObject.SetActive(false);
             contagemRegressiva[0].gameObject.SetActive(false);
             contagemRegressiva[1].gameObject.SetActive(false);
@@ -194,7 +197,7 @@ public class WaveSpawner : MonoBehaviour
         proximaWave = 0;
         waveRound++;
         WaveCount.Instance.goToNextIsland.SetActive(true);
-        if(waveRound == 1)
+        if (waveRound == 1)
         {
             activateBoss[0] = true;
             waves.Capacity += 5;
@@ -205,7 +208,7 @@ public class WaveSpawner : MonoBehaviour
                 spawnPoints.Add(ilhaSpawns[1].listaDeSpawns[i].transform);
             }
         }
-        if(waveRound == 2)
+        if (waveRound == 2)
         {
             activateBoss[1] = true;
             waves[proximaWave].apenas[1] = true;
@@ -220,14 +223,14 @@ public class WaveSpawner : MonoBehaviour
     {
         if (!bosses[0].activeInHierarchy)
         {
-        estado = SpawnState.SPAWNANDO;
-        waveCountPointer = wave.quantidade;
-        //O Spawn
-        for (int i = 0; i < wave.quantidade; i++)
-        {
-            SpawnEnemy();
-            yield return new WaitForSeconds(1f / wave.ritmo);
-        }
+            estado = SpawnState.SPAWNANDO;
+            waveCountPointer = wave.quantidade;
+            //O Spawn
+            for (int i = 0; i < wave.quantidade; i++)
+            {
+                SpawnEnemy();
+                yield return new WaitForSeconds(1f / wave.ritmo);
+            }
         }
         //Fim do Spawn
         estado = SpawnState.ESPERANDO;
@@ -281,7 +284,7 @@ public class WaveSpawner : MonoBehaviour
 
 
     }
-    
+
     public void SetEnemyToSpawn(GameObject enemy)
     {
         if (enemy != null)
