@@ -23,6 +23,7 @@ public class ControleJogador : MonoBehaviour
         fisica = GetComponent<Rigidbody>();
         Cursor.visible = false;
         speedFixa = speed;
+        //FindObjectOfType<AudioManager>().Play("mainTheme");
     }
 
     private void Update()

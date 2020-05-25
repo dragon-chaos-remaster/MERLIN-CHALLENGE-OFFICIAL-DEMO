@@ -131,15 +131,20 @@ public class Magia : MonoBehaviour
             seiLa = false;
         }
         bool teclaM = Input.GetKeyDown(KeyCode.M);
-        bool teclaG = Input.GetKeyDown(KeyCode.G);
+        bool teclaN = Input.GetKeyDown(KeyCode.N);
 
         if (teclaM && GameObject.FindWithTag("inimigoTerra").activeInHierarchy)
         {
             GameObject.FindWithTag("inimigoTerra").SetActive(false);
             
         }
-        
-        
+        if (teclaN && GameObject.FindWithTag("inimigoMadeira").activeInHierarchy)
+        {
+            GameObject.FindWithTag("inimigoMadeira").SetActive(false);
+
+        }
+
+
 
     }
 

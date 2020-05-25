@@ -58,8 +58,12 @@ public class Caveira : MonoBehaviour
             return;
         }
         snare.Desnare(duracaoSnare);
-        
-        agent.destination = target.position;
+
+        //agent.destination = target.position;
+        if (agent.isOnNavMesh)
+            agent.SetDestination(target.position);
+        else
+            agent.isStopped = true;
         
         OlhandoProPlayer();
 

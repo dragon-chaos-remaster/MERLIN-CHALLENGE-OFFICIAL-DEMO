@@ -116,3 +116,15 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
     nomeDoSom: re
+  - som: {fileID: 8300000, guid: 6466b420c89846d449d5a92ebbd57a91, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    nomeDoSom: morreu
+  - som: {fileID: 8300000, guid: d34f5bf1aaba5a0439e3138ef154dcb2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    nomeDoSom: mainTheme

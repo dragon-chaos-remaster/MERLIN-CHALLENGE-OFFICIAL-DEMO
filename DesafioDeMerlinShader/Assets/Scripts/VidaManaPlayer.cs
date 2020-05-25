@@ -10,7 +10,7 @@ public class VidaManaPlayer : MonoBehaviour
 
     public Image barraVida;
     public Text quantidadeVida;
-
+    bool playerCanDie = true;
     private Animator animator;
     private void Start()
     {
@@ -26,8 +26,14 @@ public class VidaManaPlayer : MonoBehaviour
         {
             //Destroy(gameObject);
             //  gameObject.SetActive(false);
+            Invoke("PlayerIsDead", 2f);
             animator.SetBool("Morreu", true);
-
+            if (playerCanDie)
+            {
+                FindObjectOfType<AudioManager>().Play("morreu");
+                playerCanDie = false;
+            }
+            
         }
         if (vida > 100)
         {
@@ -38,6 +44,11 @@ public class VidaManaPlayer : MonoBehaviour
             vida = 0;
         }
 
+    }
+
+    void PlayerIsDead()
+    {
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -75,7 +86,7 @@ public class VidaManaPlayer : MonoBehaviour
                 vida -= 10;
                 break;
             case "inimigoMadeira":
-                vida -= 10;
+                vida -= 15;
                 break;
             case "inimigoTerra":
                 vida -= 15;

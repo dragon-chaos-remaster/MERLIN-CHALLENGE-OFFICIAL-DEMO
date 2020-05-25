@@ -16,12 +16,12 @@ public class EnemyFollow : MonoBehaviour
 
     public void SeguirOPlayer()
     {
-        agent.destination = target.position;
+        agent.SetDestination(target.position);
     }
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        if (target != null && agent.isOnNavMesh)
             SeguirOPlayer();
         else
             agent.isStopped = true;

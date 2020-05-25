@@ -34,7 +34,7 @@ public class MenuToGame : MonoBehaviour
         manyParticles.gameObject.SetActive(false);
         //slider.offsetMax += new Vector2(-10f * Time.deltaTime, slider.offsetMax.y);
         //print("Ema");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         AsyncOperation operacao = SceneManager.LoadSceneAsync(buildNumber);
         
         while (!operacao.isDone)

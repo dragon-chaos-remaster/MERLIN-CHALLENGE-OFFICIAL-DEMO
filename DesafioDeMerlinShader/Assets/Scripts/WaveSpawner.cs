@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.AI;
+using System.Linq;
+
 public enum SpawnState { SPAWNANDO, ESPERANDO, CONTANDO };
 
 public class WaveSpawner : MonoBehaviour
 {
-    private Animator animator;
+    [SerializeField] Animator animator;
     public Pooling[] pooledObjects;
 
     // TODOS PRECISAM ESTAR VERDADEIROS
@@ -74,7 +77,7 @@ public class WaveSpawner : MonoBehaviour
     private SpawnState estado = SpawnState.CONTANDO;
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         if (spawnPoints.Count == 0)
         {
             Debug.LogError("ERRO: Não foi encontrado nenhum Ponto de Spawn dos Inimigos na Cena. FAVOR COLOCAR: " + spawnPoints.Count + " PARA A CENA");
@@ -102,6 +105,7 @@ public class WaveSpawner : MonoBehaviour
             if (!InimigoVivo())
             {
                 Debug.Log(waves.Capacity);
+                animator.SetBool("Vitoria", true);
                 OnWaveCompleted();
                 if (!bosses[0].activeInHierarchy)
                 {
@@ -109,7 +113,7 @@ public class WaveSpawner : MonoBehaviour
                     WaveCount.Instance.waveClear.gameObject.SetActive(true);
                     contagemRegressiva[0].gameObject.SetActive(true);
                     contagemRegressiva[1].gameObject.SetActive(true);
-                    animator.SetBool("Vitoria", true);
+                    
                 }
                 //print("Wave Completa");
                 //zaWarudo = true;
@@ -200,19 +204,25 @@ public class WaveSpawner : MonoBehaviour
         if (waveRound == 1)
         {
             activateBoss[0] = true;
-            waves.Capacity += 5;
             spawnLimiter = 3;
-            waves[proximaWave].apenas[2] = true;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < waves.Count; i++)
             {
+                waves[i].apenas[2] = true;
+            }
+            //waves[proximaWave].apenas[2] = true;
+            for (int i = 0; i < 5; i++)
+            {              
                 spawnPoints.Add(ilhaSpawns[1].listaDeSpawns[i].transform);
             }
         }
         if (waveRound == 2)
         {
             activateBoss[1] = true;
-            waves[proximaWave].apenas[1] = true;
-            spawnLimiter = 7;
+            for (int i = 0; i < waves.Count; i++)
+            {
+                waves[i].apenas[1] = true;
+            }
+            spawnLimiter = 8;
             for (int i = 0; i < 3; i++)
             {
                 spawnPoints.Add(ilhaSpawns[2].listaDeSpawns[i].transform);
@@ -239,48 +249,43 @@ public class WaveSpawner : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        if (waves[proximaWave].apenas[0])
+        List<int> podemSpawnar = new List<int>();
+        for(int i = 0; i < waves[proximaWave].apenas.Length; i++)
         {
-            GameObject aux = pooledObjects[0].GetPooledObject();
-            SetEnemyToSpawn(aux);
+            if (waves[proximaWave].apenas[i])
+            {
+                podemSpawnar.Add(i);
+            }
         }
-        else if (waves[proximaWave].apenas[1])
-        {
-            GameObject aux = pooledObjects[1].GetPooledObject();
-            SetEnemyToSpawn(aux);
-        }
-        else if (waves[proximaWave].apenas[2])
-        {
-            GameObject aux = pooledObjects[2].GetPooledObject();
-            SetEnemyToSpawn(aux);
-        }
-        else if (waves[proximaWave].apenas[3])
-        {
-            GameObject aux = pooledObjects[3].GetPooledObject();
-            SetEnemyToSpawn(aux);
-        }
-        else if (waves[proximaWave].apenas[0] && waves[proximaWave].apenas[1])
-        {
-            GameObject aux = pooledObjects[Random.Range(0, 1)].GetPooledObject();
-            SetEnemyToSpawn(aux);
-        }
-        else if (waves[proximaWave].apenas[1] && waves[proximaWave].apenas[2])
-        {
-            GameObject aux = pooledObjects[Random.Range(1, 2)].GetPooledObject();
-            SetEnemyToSpawn(aux);
-        }
-        else if (waves[proximaWave].apenas[0] && waves[proximaWave].apenas[2])
-        {
-            GameObject aux = pooledObjects[0].GetPooledObject();
-            GameObject aux2 = pooledObjects[2].GetPooledObject();
-            SetEnemyToSpawn(aux);
-            SetEnemyToSpawn(aux2);
-        }
-        else
-        {
-            GameObject aux = pooledObjects[Random.Range(0, pooledObjects.Length)].GetPooledObject();
-            SetEnemyToSpawn(aux);
-        }
+
+        GameObject aux = pooledObjects[podemSpawnar[Random.Range(0, podemSpawnar.Count)]].GetPooledObject();
+        SetEnemyToSpawn(aux);
+
+        //if (waves[proximaWave].apenas[0])
+        //{
+        //    GameObject aux = pooledObjects[0].GetPooledObject();
+        //    SetEnemyToSpawn(aux);
+        //}
+        //if (waves[proximaWave].apenas[1])
+        //{
+        //    GameObject aux = pooledObjects[1].GetPooledObject();
+        //    SetEnemyToSpawn(aux);
+        //}
+        //if (waves[proximaWave].apenas[2])
+        //{
+        //    GameObject aux = pooledObjects[2].GetPooledObject();
+        //    SetEnemyToSpawn(aux);
+        //}
+        //if (waves[proximaWave].apenas[3])
+        //{
+        //    GameObject aux = pooledObjects[3].GetPooledObject();
+        //    SetEnemyToSpawn(aux);
+        //}
+        //else
+        //{
+        //    GameObject aux = pooledObjects[Random.Range(0, pooledObjects.Length)].GetPooledObject();
+        //    SetEnemyToSpawn(aux);
+        //}
 
 
     }
@@ -293,7 +298,7 @@ public class WaveSpawner : MonoBehaviour
 
             Transform randomPos = spawnPoints[Random.Range(spawnLimiter, spawnPoints.Count)];
             enemy.SetActive(true);
-            enemy.transform.position = randomPos.position;
+            enemy.GetComponent<NavMeshAgent>().Warp(randomPos.position);
             //SetEnemyToSpawn();
 
 

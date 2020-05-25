@@ -69,7 +69,7 @@ public class RockEnemy : MonoBehaviour
     void Update()
     {
         //snare.Desnare(1.5f);
-        if (WaveSpawner.Instance.waveRound == 2 && !WaveSpawner.Instance.activateBoss[1])
+        if (WaveSpawner.Instance.waveRound == 3 && !WaveSpawner.Instance.activateBoss[1])
         {
             //print("roooo");
             canStartTracking = true;

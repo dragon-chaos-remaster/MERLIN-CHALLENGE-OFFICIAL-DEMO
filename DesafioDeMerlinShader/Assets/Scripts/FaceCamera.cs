@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class FaceCamera : MonoBehaviour
 {
-    public Transform cameraPos;
+    static Transform cameraPos = null;
     // Start is called before the first frame update
     
-
+    private void Awake()
+    {
+        if(cameraPos == null)
+            cameraPos = Camera.main.transform;
+    }
     // Update is called once per frame
     void Update()
     {
