@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: f6548567ee476724f821ba0374129b4d
+guid: 9a8c36b80f2fd024ebaaf2474cd27903
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -7010022100444959244
-    second: nova_tela_inicial_0
-  - first:
-      213: -9157431882465924114
-    second: nova_tela_inicial_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -46,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,49 +109,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: nova_tela_inicial_0
-      rect:
-        serializedVersion: 2
-        x: 1719
-        y: 740
-        width: 905
-        height: 603
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fd27535a0667be90800000000000000
-      internalID: -7010022100444959244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nova_tela_inicial_1
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 160
-        width: 1628
-        height: 1817
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eeb28c698344ae080800000000000000
-      internalID: -9157431882465924114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

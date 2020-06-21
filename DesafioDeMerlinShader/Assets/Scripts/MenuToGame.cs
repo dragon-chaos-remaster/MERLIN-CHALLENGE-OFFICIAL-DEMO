@@ -9,6 +9,9 @@ public class MenuToGame : MonoBehaviour
     [SerializeField] GameObject loadingSet;
     [SerializeField] RectTransform slider;
 
+    [SerializeField] GameObject CREDITOS;
+    bool isOnCredits;
+
     [SerializeField] GameObject thisGuy;
     [SerializeField] ParticleSystem manyParticles;
     // Start is called before the first frame update
@@ -18,13 +21,26 @@ public class MenuToGame : MonoBehaviour
         loadingSet.SetActive(true);
         StartCoroutine(Transicao(index));
     }
-
+    public void ShowCredits()
+    {
+        CREDITOS.SetActive(true);
+        isOnCredits = true;
+    }
+    public void HideCredits()
+    {
+        CREDITOS.SetActive(false);
+        isOnCredits = false;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             FindObjectOfType<AudioManager>().Play("re");
             Tran_SITION(1);
+        }
+        if(Input.GetButtonDown("Fire1") && CREDITOS.activeInHierarchy)
+        {
+            HideCredits();
         }
     }
     IEnumerator Transicao(int buildNumber)
@@ -34,7 +50,7 @@ public class MenuToGame : MonoBehaviour
         manyParticles.gameObject.SetActive(false);
         //slider.offsetMax += new Vector2(-10f * Time.deltaTime, slider.offsetMax.y);
         //print("Ema");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         AsyncOperation operacao = SceneManager.LoadSceneAsync(buildNumber);
         
         while (!operacao.isDone)
