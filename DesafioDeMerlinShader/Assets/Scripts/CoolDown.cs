@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoolDown : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CoolDown : MonoBehaviour
     public bool podeAtacarRaio = true;
     public bool podeAtacarSnare = true;
 
+    public GameObject[] habilidadesShow;
     
     // Update is called once per frame
     void Update()
@@ -25,14 +27,17 @@ public class CoolDown : MonoBehaviour
     {
         if (!podeAtacarFogo)
         {
+            habilidadesShow[0].transform.GetChild(0).gameObject.SetActive(true);
             waitFireRateFogo += waitFireRateFogo * Time.deltaTime;
         }
         if (!podeAtacarRaio)
         {
+            habilidadesShow[1].transform.GetChild(0).gameObject.SetActive(true);
             waitFireRateRaio += waitFireRateRaio * Time.deltaTime;
         }
         if (!podeAtacarSnare)
         {
+            habilidadesShow[2].transform.GetChild(0).gameObject.SetActive(true);
             waitFireRateSnare += waitFireRateSnare * Time.deltaTime;
         }
 
@@ -40,14 +45,17 @@ public class CoolDown : MonoBehaviour
         if (waitFireRateFogo >= tempoAtaqueFogo)
         {
             podeAtacarFogo = true;
+            habilidadesShow[0].transform.GetChild(0).gameObject.SetActive(false);
         }
         if (waitFireRateRaio >= tempoAtaqueRaio)
         {
             podeAtacarRaio = true;
+            habilidadesShow[1].transform.GetChild(0).gameObject.SetActive(false);
         }
         if (waitFireRateSnare >= tempoAtaqueSnare)
         {
             podeAtacarSnare = true;
+            habilidadesShow[2].transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
