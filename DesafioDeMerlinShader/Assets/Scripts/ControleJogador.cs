@@ -33,9 +33,9 @@ public class ControleJogador : MonoBehaviour
         float axisX = Input.GetAxisRaw("Vertical");
         float axixZ = Input.GetAxisRaw("Horizontal");
 
-        movimento = new Vector3((axisX), 0f, -(axixZ));
+        movimento = new Vector3((axisX), movimento.y, -(axixZ));
         movimento = movimento.normalized * speed;
-        fisica.velocity = movimento;
+        fisica.velocity = new Vector3(movimento.x,fisica.velocity.y,movimento.z);
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000))
         {

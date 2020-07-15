@@ -30,10 +30,12 @@ public class Flecha : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         fisica.velocity = flecha.forward * velocidadeProjetil * Time.deltaTime;
-
+    }
+    void Update()
+    {
         tempoViva += tempoAtual * Time.deltaTime;
         if (tempoViva >= tempoDestruicao)
         {

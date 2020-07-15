@@ -23,11 +23,14 @@ public class AtaqueBasico : MonoBehaviour
         //fisica.AddForce(foguinho.forward * velocidadeProjetil);
     }
 
-    // Update is called once per frame
+    private void FixedUpdate()
+    {
+        fisica.velocity = foguinho.forward * velocidadeProjetil * Time.deltaTime;
+    }
     void Update()
     {
         tempoViva += tempoAtual * Time.deltaTime;
-        fisica.velocity = foguinho.forward * velocidadeProjetil * Time.deltaTime;
+       
         if (tempoViva >= tempoDestruicao)
         {
             Destroy(gameObject);

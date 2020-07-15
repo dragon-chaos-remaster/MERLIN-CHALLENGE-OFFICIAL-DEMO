@@ -32,14 +32,17 @@ public class Raio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fisica.velocity = raio.forward * velocidadeProjetil * Time.deltaTime;
+        
         if(ricochetes >= limiteDeRicochete)
         {
             ricochetes = 0;
             Destroy(gameObject);
         }
     }
-
+    void FixedUpdate()
+    {
+        fisica.velocity = raio.forward * velocidadeProjetil * Time.deltaTime;
+    }
     private void OnTriggerEnter(Collider other)
     {
         TomaDano[] inimigos = FindObjectsOfType<TomaDano>();

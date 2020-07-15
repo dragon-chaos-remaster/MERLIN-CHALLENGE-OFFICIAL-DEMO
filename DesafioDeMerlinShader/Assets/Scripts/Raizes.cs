@@ -18,7 +18,7 @@ public class Raizes : MonoBehaviour
         //fisica.AddForce(raizes.forward * velocidadeProjetil);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         fisica.velocity = raizes.forward * velocidadeProjetil * Time.deltaTime;
         

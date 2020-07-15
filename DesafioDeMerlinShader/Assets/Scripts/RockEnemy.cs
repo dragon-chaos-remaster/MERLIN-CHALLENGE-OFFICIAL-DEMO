@@ -92,28 +92,32 @@ public class RockEnemy : MonoBehaviour
                 //print("ENEMY SPOTTED");
                 enemySpotted = true;
             }
-            if (enemySpotted)
+            
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (enemySpotted)
+        {
+            if (!startNavMesh)
             {
-                if (!startNavMesh)
-                {
-                    Vector3 moveTowardsPlayer = (targetPos.position - new Vector3(transform.position.x, transform.position.y, transform.position.z * 0.1f)).normalized * agent.speed;
-                    transform.Rotate(transform.forward * 10);
-                    myBody.velocity = moveTowardsPlayer;
-                    
-                    Invoke("BeginNavMesh", 4.5f);
-                }
-                else
-                {
-                    myBody.mass = 1f;
-                    snare.Desnare(1.5f);
-                    agent.SetDestination(targetPos.position);
-                }
-                //StartCoroutine(BeginNavMesh());
-                //enemySpotted = false;
-                //agent.enabled = true;
-                //myBody.mass = 1f;
-                //agent.SetDestination(targetPos.position);
+                Vector3 moveTowardsPlayer = (targetPos.position - new Vector3(transform.position.x, transform.position.y, transform.position.z * 0.1f)).normalized * agent.speed;
+                transform.Rotate(transform.forward * 10);
+                myBody.velocity = moveTowardsPlayer;
+
+                Invoke("BeginNavMesh", 4.5f);
             }
+            else
+            {
+                myBody.mass = 1f;
+                snare.Desnare(1.5f);
+                agent.SetDestination(targetPos.position);
+            }
+            //StartCoroutine(BeginNavMesh());
+            //enemySpotted = false;
+            //agent.enabled = true;
+            //myBody.mass = 1f;
+            //agent.SetDestination(targetPos.position);
         }
     }
     void BeginNavMesh()
