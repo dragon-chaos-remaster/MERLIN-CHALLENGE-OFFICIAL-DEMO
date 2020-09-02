@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
 using System.Linq;
-
+using UnityEngine.SceneManagement;
 public enum SpawnState { SPAWNANDO, ESPERANDO, CONTANDO };
 
 public class WaveSpawner : MonoBehaviour
@@ -19,7 +19,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] public List<GameObject> bosses = new List<GameObject>();
 
     [SerializeField] GameObject secondBossExplosion;
-
+    [SerializeField] GameObject[] bridgeWalls;
     [SerializeField] TimeManager tempo;
 
     public int waveRound = 0;
@@ -113,7 +113,12 @@ public class WaveSpawner : MonoBehaviour
                     WaveCount.Instance.waveClear.gameObject.SetActive(true);
                     contagemRegressiva[0].gameObject.SetActive(true);
                     contagemRegressiva[1].gameObject.SetActive(true);
-                    
+
+                    //WaveCount.Instance.goToNextIsland.SetActive(true);
+                }
+                if (!bosses[1].activeInHierarchy)
+                {
+                    SceneManager.LoadScene(2);
                 }
                 //print("Wave Completa");
                 //zaWarudo = true;
@@ -139,6 +144,7 @@ public class WaveSpawner : MonoBehaviour
             contagemRegressiva[0].gameObject.SetActive(false);
             contagemRegressiva[1].gameObject.SetActive(false);
             WaveCount.Instance.goToNextIsland.SetActive(false);
+            bridgeWalls[0].SetActive(true);
             zaWarudo = false;
             if (estado != SpawnState.SPAWNANDO)
             {
@@ -199,8 +205,7 @@ public class WaveSpawner : MonoBehaviour
     void RestartEveryWave()
     {
         proximaWave = 0;
-        waveRound++;
-        WaveCount.Instance.goToNextIsland.SetActive(true);
+        waveRound++;       
         if (waveRound == 1)
         {
             activateBoss[0] = true;
@@ -228,6 +233,11 @@ public class WaveSpawner : MonoBehaviour
                 spawnPoints.Add(ilhaSpawns[2].listaDeSpawns[i].transform);
             }
         }
+        for (int i = 0; i < bridgeWalls.Length; i++)
+        {
+            bridgeWalls[i].SetActive(false);
+        }
+        WaveCount.Instance.goToNextIsland.SetActive(true);
     }
     IEnumerator CanSpawn(Wave wave)
     {

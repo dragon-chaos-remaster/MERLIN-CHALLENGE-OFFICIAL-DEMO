@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MagicWave.unity
     guid: ab8d4525ae4f4bc4ba2e2b22663d4874
   - enabled: 1
+    path: Assets/Scenes/Thanks.unity
+    guid: 76c0692697673844282c622c88a6237c
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

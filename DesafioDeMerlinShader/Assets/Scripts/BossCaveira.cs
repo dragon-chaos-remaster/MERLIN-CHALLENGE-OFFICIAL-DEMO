@@ -65,7 +65,7 @@ public class BossCaveira : MonoBehaviour
             distanceValue += Time.deltaTime;
             pezin.position = (Vector3.up * distanceValue);
             //print(distanceValue);
-            RoletaRussa();
+            StartCoroutine(RoletaRussa());
         }
         if (caveira)
         {
@@ -107,7 +107,7 @@ public class BossCaveira : MonoBehaviour
                 break;
         }
     }
-    void RoletaRussa()
+    IEnumerator RoletaRussa()
     {
         tempoAtualRoleta += tempoRoleta * Time.deltaTime;
         if (tempoAtualRoleta >= tempoDuracaoRoleta)
@@ -133,7 +133,7 @@ public class BossCaveira : MonoBehaviour
             aux.transform.position = eixos[Random.Range(1, 2)].position;
             aux.transform.rotation = eixos[Random.Range(1, 2)].rotation;
             aux.SetActive(true);
-
+            yield return new WaitForSeconds(0.35f);
         }
     }
 

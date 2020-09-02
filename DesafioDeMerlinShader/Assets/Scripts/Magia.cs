@@ -156,7 +156,7 @@ public class Magia : MonoBehaviour
         {
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 1000, hitavel) && (bolaFogo) && (updatedMana >= custoManaFogo) && (coolDown.podeAtacarFogo))
+            if (Physics.Raycast(ray, out hit, 10000, hitavel) && (bolaFogo) && (updatedMana >= custoManaFogo) && (coolDown.podeAtacarFogo))
             {
 
                 GameObject aux = Instantiate(fireBall, new Vector3(hit.point.x, 20, hit.point.z), Quaternion.Euler(hit.normal));
@@ -169,7 +169,7 @@ public class Magia : MonoBehaviour
         {
             //print("pei");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 1000, hitavel) && (raio) && (updatedMana >= custoManaRaio) && (coolDown.podeAtacarRaio))
+            if (Physics.Raycast(ray, out hit, 10000, hitavel) && (raio) && (updatedMana >= custoManaRaio) && (coolDown.podeAtacarRaio))
             {
                 GameObject aux = Instantiate(choque, choquePoint.position, choquePoint.rotation);
                 updatedMana -= custoManaRaio;
@@ -181,7 +181,7 @@ public class Magia : MonoBehaviour
         {
            // print("pei");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 1000, hitavel) && (seiLa) && (updatedMana >= custoManaRaiz) && (coolDown.podeAtacarSnare))
+            if (Physics.Raycast(ray, out hit, 10000, hitavel) && (seiLa) && (updatedMana >= custoManaRaiz) && (coolDown.podeAtacarSnare))
             {
                 Transform aux = Instantiate(raizes, raizesPoint.position, raizesPoint.rotation);
                 updatedMana -= custoManaRaiz;
@@ -196,7 +196,7 @@ public class Magia : MonoBehaviour
         if ((Input.GetMouseButtonDown(0)) && (!EventSystem.current.IsPointerOverGameObject()))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 1000, hitavel) && (podeAtacar))
+            if (Physics.Raycast(ray, out hit, 10000, hitavel) && (podeAtacar))
             {
                 Instantiate(ataqueBasico, ataquePoint.position, ataquePoint.rotation);
                 podeAtacar = false;
