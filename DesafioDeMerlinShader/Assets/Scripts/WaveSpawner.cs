@@ -26,6 +26,7 @@ public class WaveSpawner : MonoBehaviour
     //[SerializeField] Pause pauses;
     //Referência ao Golpe do vilão DIO BRANDO, de Jojo's Bizarre Adventures: Stardust Crusaders, onde ele para o Tempo 
     bool zaWarudo = true;
+    bool gameCompleted;
     //KONO DIO DA
 
     //public bool apenasAtiradores;
@@ -118,7 +119,7 @@ public class WaveSpawner : MonoBehaviour
                 }
                 if (!bosses[1].activeInHierarchy)
                 {
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
                 //print("Wave Completa");
                 //zaWarudo = true;
@@ -162,12 +163,16 @@ public class WaveSpawner : MonoBehaviour
         procurarContador -= Time.deltaTime;
         if (procurarContador <= 0f)
         {
+            if (gameCompleted)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
             procurarContador = 1f;
-            if ((GameObject.FindGameObjectWithTag("inimigoFraco") == null && GameObject.FindGameObjectWithTag("inimigoTerra") == null && GameObject.FindGameObjectWithTag("inimigoMadeira") == null) && !bosses[0].activeInHierarchy/* && activateBoss[1]*/ && (!bosses[1].GetComponentInChildren<SphereCollider>().enabled || !bosses[1].activeInHierarchy))
+            if ((GameObject.FindGameObjectWithTag("inimigoFraco") == null && GameObject.FindGameObjectWithTag("inimigoTerra") == null && GameObject.FindGameObjectWithTag("inimigoMadeira") == null) && (!bosses[0].activeInHierarchy/* && activateBoss[1]*/ && (!bosses[1].GetComponentInChildren<SphereCollider>().enabled || !bosses[1].activeInHierarchy)))
             {
                 //FREEZE FRAME NO ULTIMO INIMIGO
                 tempo.FreezeFrame();
-
+                
                 //print(GameObject.FindGameObjectWithTag("Enemy").ToString());
                 return false;
             }
