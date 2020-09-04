@@ -117,9 +117,12 @@ public class WaveSpawner : MonoBehaviour
 
                     //WaveCount.Instance.goToNextIsland.SetActive(true);
                 }
-                if (!bosses[1].activeInHierarchy)
+                for (int i = 0; i < bosses[1].transform.childCount; i++)
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    if (!bosses[1].transform.GetChild(i).gameObject.activeInHierarchy && i == 11)
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    }
                 }
                 //print("Wave Completa");
                 //zaWarudo = true;
@@ -163,13 +166,20 @@ public class WaveSpawner : MonoBehaviour
         procurarContador -= Time.deltaTime;
         if (procurarContador <= 0f)
         {
-            if (gameCompleted)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+            //if (gameCompleted)
+            //{
+            //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //}
             procurarContador = 1f;
-            if ((GameObject.FindGameObjectWithTag("inimigoFraco") == null && GameObject.FindGameObjectWithTag("inimigoTerra") == null && GameObject.FindGameObjectWithTag("inimigoMadeira") == null) && (!bosses[0].activeInHierarchy/* && activateBoss[1]*/ && (!bosses[1].GetComponentInChildren<SphereCollider>().enabled || !bosses[1].activeInHierarchy)))
+            if ((GameObject.FindGameObjectWithTag("inimigoFraco") == null && GameObject.FindGameObjectWithTag("inimigoTerra") == null && GameObject.FindGameObjectWithTag("inimigoMadeira") == null) && (!bosses[0].activeInHierarchy/* && activateBoss[1]*/ /*!bosses[1].GetComponentInChildren<SphereCollider>().enabled || !bosses[1].activeInHierarchy*/))
             {
+                for (int i = 0; i < bosses[1].transform.childCount; i++)
+                {
+                    if (!bosses[1].transform.GetChild(i).gameObject.activeInHierarchy && i == 11)
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    }
+                }
                 //FREEZE FRAME NO ULTIMO INIMIGO
                 tempo.FreezeFrame();
                 

@@ -304,13 +304,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22835121}
-  m_LocalRotation: {x: 0.000000034605954, y: -0.2882856, z: -0.000000036240454, w: 0.9575445}
-  m_LocalPosition: {x: -44.7, y: 3.7, z: -218.4}
+  m_LocalRotation: {x: 0.000000041255017, y: -0.0874539, z: -0.000000028442333, w: 0.99616855}
+  m_LocalPosition: {x: -44.550003, y: 3.7000005, z: -218.3}
   m_LocalScale: {x: 1, y: 1.3982, z: 56.912834}
   m_Children: []
   m_Father: {fileID: 1417593552}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: -33.511, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -10.034, z: 0}
 --- !u!65 &22835123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -967,6 +967,99 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d65aedd37c60ad140b83d4e3f244e737, type: 3}
+--- !u!1 &193364759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193364760}
+  - component: {fileID: 193364763}
+  - component: {fileID: 193364762}
+  - component: {fileID: 193364761}
+  m_Layer: 0
+  m_Name: Parede (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &193364760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193364759}
+  m_LocalRotation: {x: -0.00000002760508, y: 0.05224507, z: -0.000000041819877, w: 0.99863434}
+  m_LocalPosition: {x: -47.9, y: 3.7000005, z: -188.8}
+  m_LocalScale: {x: 1, y: 1.3982, z: 33.113697}
+  m_Children: []
+  m_Father: {fileID: 1417593552}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 5.9900002, z: 0}
+--- !u!65 &193364761
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193364759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.5, z: 1.2629613}
+  m_Center: {x: 0.41111562, y: 0.7512582, z: -0.1325022}
+--- !u!23 &193364762
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193364759}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &193364763
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193364759}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &201884526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2626,7 +2719,6 @@ GameObject:
   - component: {fileID: 415578339}
   - component: {fileID: 415578338}
   - component: {fileID: 415578337}
-  - component: {fileID: 415578336}
   m_Layer: 0
   m_Name: SimpleCartoonWater (3)
   m_TagString: Untagged
@@ -2634,20 +2726,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &415578336
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415578335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &415578337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3713,7 +3791,6 @@ GameObject:
   - component: {fileID: 584484257}
   - component: {fileID: 584484256}
   - component: {fileID: 584484255}
-  - component: {fileID: 584484254}
   m_Layer: 0
   m_Name: SimpleCartoonWater (4)
   m_TagString: Untagged
@@ -3721,20 +3798,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &584484254
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584484253}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &584484255
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4812,7 +4875,6 @@ GameObject:
   - component: {fileID: 722958865}
   - component: {fileID: 722958864}
   - component: {fileID: 722958863}
-  - component: {fileID: 722958862}
   m_Layer: 0
   m_Name: SimpleCartoonWater (2)
   m_TagString: Untagged
@@ -4820,20 +4882,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &722958862
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722958861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &722958863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11713,8 +11761,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.5, z: 1}
-  m_Center: {x: 0, y: 0.7512583, z: 0}
+  m_Size: {x: 1, y: 2.5, z: 1.2629613}
+  m_Center: {x: 0.41111562, y: 0.7512582, z: -0.1325022}
 --- !u!23 &1364982789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12064,6 +12112,7 @@ Transform:
   - {fileID: 1364982787}
   - {fileID: 22835122}
   - {fileID: 1605343702}
+  - {fileID: 193364760}
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13518,7 +13567,6 @@ GameObject:
   - component: {fileID: 1550995178}
   - component: {fileID: 1550995177}
   - component: {fileID: 1550995176}
-  - component: {fileID: 1550995175}
   m_Layer: 0
   m_Name: SimpleCartoonWater (5)
   m_TagString: Untagged
@@ -13526,20 +13574,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1550995175
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550995174}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1550995176
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13973,7 +14007,6 @@ GameObject:
   - component: {fileID: 1578624326}
   - component: {fileID: 1578624325}
   - component: {fileID: 1578624324}
-  - component: {fileID: 1578624323}
   m_Layer: 0
   m_Name: SimpleCartoonWater (1)
   m_TagString: Untagged
@@ -13981,20 +14014,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1578624323
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578624322}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1578624324
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17210,7 +17229,6 @@ GameObject:
   - component: {fileID: 2037063994}
   - component: {fileID: 2037063993}
   - component: {fileID: 2037063992}
-  - component: {fileID: 2037063991}
   m_Layer: 0
   m_Name: SimpleCartoonWater
   m_TagString: Untagged
@@ -17218,20 +17236,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2037063991
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037063990}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2037063992
 MeshRenderer:
   m_ObjectHideFlags: 0
